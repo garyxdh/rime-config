@@ -53,3 +53,6 @@ patch:
       Control_R: noop
       Caps_Lock: clear
       Eisu_toggle: clear
+
+  # 添加技术词库
+  translator/dictionary: luna_pinyin.extended

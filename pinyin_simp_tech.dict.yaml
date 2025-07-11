@@ -1,0 +1,273 @@
+# Rime dictionary
+# encoding: utf-8
+#
+# 技术和算法词汇词典
+# 包含编程、算法、数据结构、计算机科学等相关词汇
+#
+
+---
+name: pinyin_simp_tech
+version: "2024.01.01"
+sort: by_weight
+use_preset_vocabulary: false
+...
+
+# 编程语言
+JavaScript	JavaScript
+TypeScript	TypeScript
+Python	Python
+Java	Java
+C++	cpp
+C#	csharp
+Go	Go
+Rust	Rust
+Swift	Swift
+Kotlin	Kotlin
+PHP	PHP
+Ruby	Ruby
+Scala	Scala
+Haskell	Haskell
+Clojure	Clojure
+
+# 数据结构
+数组	shu zu
+链表	lian biao
+栈	zhan
+队列	dui lie
+哈希表	ha xi biao
+散列表	san lie biao
+二叉树	er cha shu
+平衡树	ping heng shu
+红黑树	hong hei shu
+B树	B shu
+堆	dui
+优先队列	you xian dui lie
+图	tu
+有向图	you xiang tu
+无向图	wu xiang tu
+邻接表	lin jie biao
+邻接矩阵	lin jie ju zhen
+
+# 算法
+排序算法	pai xu suan fa
+冒泡排序	mao pao pai xu
+选择排序	xuan ze pai xu
+插入排序	cha ru pai xu
+快速排序	kuai su pai xu
+归并排序	gui bing pai xu
+堆排序	dui pai xu
+计数排序	ji shu pai xu
+桶排序	tong pai xu
+基数排序	ji shu pai xu
+搜索算法	sou suo suan fa
+二分搜索	er fen sou suo
+深度优先搜索	shen du you xian sou suo
+广度优先搜索	guang du you xian sou suo
+DFS	DFS
+BFS	BFS
+动态规划	dong tai gui hua
+贪心算法	tan xin suan fa
+分治算法	fen zhi suan fa
+回溯算法	hui su suan fa
+递归	di gui
+迭代	die dai
+
+# 复杂度
+时间复杂度	shi jian fu za du
+空间复杂度	kong jian fu za du
+大O记号	da O ji hao
+O(1)	O(1)
+O(n)	O(n)
+O(log n)	O(log n)
+O(n log n)	O(n log n)
+O(n²)	O(n²)
+
+# 设计模式
+单例模式	dan li mo shi
+工厂模式	gong chang mo shi
+观察者模式	guan cha zhe mo shi
+装饰器模式	zhuang shi qi mo shi
+适配器模式	shi pei qi mo shi
+策略模式	ce lue mo shi
+命令模式	ming ling mo shi
+状态模式	zhuang tai mo shi
+代理模式	dai li mo shi
+建造者模式	jian zao zhe mo shi
+
+# 数据库
+SQL	SQL
+NoSQL	NoSQL
+MySQL	MySQL
+PostgreSQL	PostgreSQL
+MongoDB	MongoDB
+Redis	Redis
+索引	suo yin
+主键	zhu jian
+外键	wai jian
+事务	shi wu
+ACID	ACID
+范式	fan shi
+第一范式	di yi fan shi
+第二范式	di er fan shi
+第三范式	di san fan shi
+数据库设计	shu ju ku she ji
+查询优化	cha xun you hua
+
+# 网络和协议
+HTTP	HTTP
+HTTPS	HTTPS
+TCP	TCP
+UDP	UDP
+IP	IP
+DNS	DNS
+CDN	CDN
+负载均衡	fu zai jun heng
+反向代理	fan xiang dai li
+正向代理	zheng xiang dai li
+WebSocket	WebSocket
+RESTful	RESTful
+GraphQL	GraphQL
+API	API
+JSON	JSON
+XML	XML
+
+# 前端技术
+HTML	HTML
+CSS	CSS
+DOM	DOM
+BOM	BOM
+Ajax	Ajax
+React	React
+Vue	Vue
+Angular	Angular
+Node.js	Node.js
+Webpack	Webpack
+Babel	Babel
+ESLint	ESLint
+Sass	Sass
+Less	Less
+响应式设计	xiang ying shi she ji
+移动端适配	yi dong duan shi pei
+
+# 后端技术
+Spring	Spring
+Django	Django
+Flask	Flask
+Express	Express
+Koa	Koa
+微服务	wei fu wu
+容器化	rong qi hua
+Docker	Docker
+Kubernetes	Kubernetes
+服务网格	fu wu wang ge
+消息队列	xiao xi dui lie
+缓存	huan cun
+分布式	fen bu shi
+集群	ji qun
+高可用	gao ke yong
+高并发	gao bing fa
+
+# 机器学习和AI
+机器学习	ji qi xue xi
+深度学习	shen du xue xi
+神经网络	shen jing wang luo
+卷积神经网络	juan ji shen jing wang luo
+循环神经网络	xun huan shen jing wang luo
+CNN	CNN
+RNN	RNN
+LSTM	LSTM
+GAN	GAN
+强化学习	qiang hua xue xi
+监督学习	jian du xue xi
+无监督学习	wu jian du xue xi
+特征工程	te zheng gong cheng
+模型训练	mo xing xun lian
+过拟合	guo ni he
+欠拟合	qian ni he
+梯度下降	ti du xia jiang
+反向传播	fan xiang chuan bo
+TensorFlow	TensorFlow
+PyTorch	PyTorch
+
+# 版本控制
+Git	Git
+GitHub	GitHub
+GitLab	GitLab
+版本控制	ban ben kong zhi
+分支	fen zhi
+合并	he bing
+提交	ti jiao
+推送	tui song
+拉取	la qu
+克隆	ke long
+冲突解决	chong tu jie jue
+
+# 测试
+单元测试	dan yuan ce shi
+集成测试	ji cheng ce shi
+端到端测试	duan dao duan ce shi
+测试驱动开发	ce shi qu dong kai fa
+TDD	TDD
+BDD	BDD
+自动化测试	zi dong hua ce shi
+性能测试	xing neng ce shi
+压力测试	ya li ce shi
+Mock	Mock
+
+# 安全
+加密	jia mi
+解密	jie mi
+哈希	ha xi
+数字签名	shu zi qian ming
+SSL	SSL
+TLS	TLS
+OAuth	OAuth
+JWT	JWT
+XSS	XSS
+CSRF	CSRF
+SQL注入	SQL zhu ru
+防火墙	fang huo qiang
+渗透测试	shen tou ce shi
+
+# 云计算
+云计算	yun ji suan
+AWS	AWS
+Azure	Azure
+阿里云	a li yun
+腾讯云	teng xun yun
+虚拟化	xu ni hua
+弹性计算	tan xing ji suan
+对象存储	dui xiang cun chu
+内容分发网络	nei rong fen fa wang luo
+
+# 开发工具和环境
+IDE	IDE
+VSCode	VSCode
+IntelliJ	IntelliJ
+Eclipse	Eclipse
+Vim	Vim
+终端	zhong duan
+命令行	ming ling hang
+Shell	Shell
+Bash	Bash
+PowerShell	PowerShell
+虚拟环境	xu ni huan jing
+包管理器	bao guan li qi
+npm	npm
+pip	pip
+Maven	Maven
+Gradle	Gradle
+
+# 软件工程
+敏捷开发	min jie kai fa
+Scrum	Scrum
+看板	kan ban
+持续集成	chi xu ji cheng
+持续部署	chi xu bu shu
+CI/CD	CI/CD
+DevOps	DevOps
+代码审查	dai ma shen cha
+重构	chong gou
+技术债务	ji shu zhai wu
+架构设计	jia gou she ji
+系统设计	xi tong she ji

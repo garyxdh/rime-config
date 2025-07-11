@@ -1,0 +1,19 @@
+# Rime dictionary
+# encoding: utf-8
+#
+# 扩展词典 - 整合基础词典和技术词库
+#
+
+---
+name: luna_pinyin.extended
+version: "2024.01.01"
+sort: by_weight
+use_preset_vocabulary: true
+
+import_tables:
+  - luna_pinyin
+  - pinyin_simp_tech
+
+patch:
+  translator/dictionary: luna_pinyin.extended
+...
