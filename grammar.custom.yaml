@@ -1,0 +1,27 @@
+# Rime 语法模型自定义配置
+# encoding: utf-8
+
+patch:
+  # 简体中文增强语法配置
+  hans:
+    grammar:
+      language: zh-hans-t-essay-bgw
+    translator/contextual_suggestions: true
+    translator/max_homophones: 9
+    translator/max_homographs: 9
+    # 增强句子学习能力
+    translator/enable_sentence: true
+    translator/sentence_over_completion: true
+    
+  # 简体中文字符级搭配优化
+  hans_char:
+    grammar:
+      language: zh-hans-t-essay-bgc
+      collocation_max_length: 4    # 增加到4字搭配
+      collocation_min_length: 2    # 保持2字最小长度
+    translator/contextual_suggestions: true
+    translator/max_homophones: 9
+    translator/max_homographs: 9
+    # 启用更长的搭配学习
+    translator/enable_completion: true
+    translator/enable_sentence: true

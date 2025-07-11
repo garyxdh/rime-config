@@ -18,6 +18,11 @@ patch:
   style/font_face: "PingFangSC-Regular" # 使用系统字体
   style/alpha: 0.95 # 轻微透明度，增强 macOS 原生感
 
+  # 状态显示配置 - 显示中英文和大小写状态
+  show_notifications_when_mode_changes: true # 模式切换时显示通知
+  show_notifications_via_notification_center: false # 不使用通知中心
+  show_notifications_time: 1.2 # 通知显示时间（秒）
+
   # macOS 原生风格配色方案
   preset_color_schemes/macos_native:
     name: "macOS 原生风格／macOS Native"
@@ -31,8 +36,6 @@ patch:
     hilited_candidate_text_color: 0xffffff # 选中文字色（白色）
     hilited_text_color: 0xffffff # 高亮输入文字色
     label_color: 0x666666 # 标签色（深灰）
-    horizontal: true # 水平布局
-    inline_preedit: true # 内联预编辑
 
   # 浅色主题配色方案（可选）
   preset_color_schemes/macos_light:
@@ -47,8 +50,6 @@ patch:
     hilited_candidate_text_color: 0xffffff # 选中文字色（白色）
     hilited_text_color: 0x000000 # 高亮输入文字色
     label_color: 0x999999 # 标签色（中灰）
-    horizontal: true # 水平布局
-    inline_preedit: true # 内联预编辑
 
   # 北欧风格配色方案
   preset_color_schemes/nordic:
@@ -63,8 +64,6 @@ patch:
     hilited_candidate_text_color: 0xeceff4 # 选中文字色（极地雪）
     hilited_text_color: 0xd8dee9 # 高亮输入文字色
     label_color: 0x4c566a # 标签色（中灰）
-    horizontal: true
-    inline_preedit: true
 
   # 温暖橙色配色方案
   preset_color_schemes/warm_orange:
@@ -79,8 +78,6 @@ patch:
     hilited_candidate_text_color: 0x000000 # 选中文字色（黑色）
     hilited_text_color: 0xff8c00 # 高亮输入文字色（深橙）
     label_color: 0x666666 # 标签色（深灰）
-    horizontal: true
-    inline_preedit: true
 
   # 薄荷绿配色方案
   preset_color_schemes/mint_green:
@@ -95,8 +92,6 @@ patch:
     hilited_candidate_text_color: 0x000000 # 选中文字色（黑色）
     hilited_text_color: 0x00d4aa # 高亮输入文字色（薄荷绿）
     label_color: 0x666666 # 标签色（深灰）
-    horizontal: true
-    inline_preedit: true
 
   # 紫色梦幻配色方案
   preset_color_schemes/purple_dream:
@@ -111,8 +106,6 @@ patch:
     hilited_candidate_text_color: 0xffffff # 选中文字色（白色）
     hilited_text_color: 0xe94560 # 高亮输入文字色（玫瑰红）
     label_color: 0x7f8c8d # 标签色（银灰）
-    horizontal: true
-    inline_preedit: true
 
   # 简约灰配色方案
   preset_color_schemes/minimal_gray:
@@ -127,5 +120,3 @@ patch:
     hilited_candidate_text_color: 0xffffff # 选中文字色（纯白）
     hilited_text_color: 0xf8f8f2 # 高亮输入文字色
     label_color: 0x808080 # 标签色（中灰）
-    horizontal: true
-    inline_preedit: true

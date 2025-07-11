@@ -7,6 +7,7 @@ patch:
     - name: ascii_mode
       reset: 0 # 默认中文模式
       states: [中文, 西文]
+      # 添加状态显示
     - name: full_shape
       reset: 0 # 默认半角符号
       states: [半角, 全角]
@@ -34,14 +35,17 @@ patch:
     "'''": { pair: ["'", "'"] } # 单引号转换为中文引号
     '"': { pair: ["“", "”"] } # 双引号转换为中文引号
 
-  # 按键绑定配置 - 支持Shift键直接输出原始英文输入
+  # 按键绑定配置 - 包含默认翻页功能和Shift键支持
   key_binder:
+    import_preset: default # 导入默认按键绑定，包括翻页功能
     bindings/+:
       # 当正在输入或有候选菜单时，按Shift键输出原始的英文字母输入
       - { when: composing, accept: Shift_L, send: Escape }
       - { when: composing, accept: Shift_R, send: Escape }
       - { when: has_menu, accept: Shift_L, send: Escape }
       - { when: has_menu, accept: Shift_R, send: Escape }
+      # Caps Lock 状态切换显示
+      - { when: always, accept: Caps_Lock, toggle: ascii_mode }
 
   # 启用内联ASCII模式配置
   ascii_composer:
@@ -51,8 +55,64 @@ patch:
       Shift_R: commit_code # 提交原始输入码
       Control_L: noop
       Control_R: noop
-      Caps_Lock: clear
+      Caps_Lock: commit_code
       Eisu_toggle: clear
+
+  # 模糊音和拼写纠错配置 - 使用Rime内置的通用纠错系统
+  speller:
+    algebra:
+      __patch:
+        # 导入内置的拼写纠错和按键纠错功能
+        - pinyin:/spelling_correction # 标准拼写纠错
+        - pinyin:/key_correction # 按键错误纠正（包含ao<->oa等）
+        # 自定义模糊音
+        - luna_pinyin_simp.custom:/fuzzy_pinyin
 
   # 添加技术词库
   translator/dictionary: luna_pinyin.extended
+
+  # 启用句子学习和更强的上下文功能
+  custom_phrase:
+    dictionary: ""
+    user_dict: custom_phrase
+    db_class: stabledb
+    enable_completion: true # 启用自动补全
+    enable_sentence: true # 启用句子学习
+    initial_quality: 1
+
+  # 添加专门的技术词汇表翻译器 (table_translator 支持自动补全)
+  tech_translator:
+    dictionary: pinyin_simp_tech
+    enable_completion: true # table_translator 支持自动补全
+    enable_sentence: false
+    initial_quality: 0.8 # 提高技术词汇的优先级
+    spelling_hints: 0 # 关闭拼写提示
+
+  # 优化翻译器设置 - 主翻译器(script_translator)
+  # 注意：重复的翻译器配置已移至 grammar.custom.yaml 统一管理
+  translator:
+    enable_user_dict: true # 确保用户词典启用
+    # enable_completion: true # script_translator 不支持此选项
+    spelling_hints: 0 # 关闭拼写提示
+
+  # 添加技术词汇翻译器到引擎
+  engine/translators/+:
+    - table_translator@tech_translator
+
+# 自定义模糊音定义 - 采用标准的Rime模糊音格式
+fuzzy_pinyin:
+  __append:
+    # 平翘舌模糊音
+    - derive/^([zcs])h/$1/ # zh, ch, sh => z, c, s
+    - derive/^([zcs])([^h])/$1h$2/ # z, c, s => zh, ch, sh
+    # 前后鼻音模糊音
+    - derive/([ei])n$/$1ng/ # en => eng, in => ing
+    - derive/([ei])ng$/$1n/ # eng => en, ing => in
+    # 边鼻音模糊音
+    - derive/^l/n/ # l => n
+    - derive/^n/l/ # n => l
+    - derive/l$/n/ # 韵尾 l => n
+    - derive/n$/l/ # 韵尾 n => l
+    # 其他常见模糊音
+    - derive/ong$/on/ # ong => on (方言)
+    - derive/^([bpmf])eng$/$1ong/ # meng => mong (方言)
