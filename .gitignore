@@ -1,0 +1,45 @@
+# Rime 配置目录 .gitignore
+# 只跟踪配置文件，忽略自动生成的文件
+
+# 忽略构建目录和编译后的文件
+build/
+*.bin
+*.reverse.bin
+
+# 忽略用户数据库文件
+*.userdb/
+*.userdb.txt
+*.userdb.kct
+*.ldb
+CURRENT
+LOCK
+LOG
+LOG.old
+MANIFEST-*
+
+# 忽略日志文件
+*.log
+*.log.*
+
+# 忽略同步目录
+sync/
+
+# 忽略临时文件和缓存
+*.tmp
+*.cache
+.DS_Store
+Thumbs.db
+
+# 忽略安装信息文件
+installation.yaml
+
+# 忽略用户个人设置文件
+user.yaml
+
+# 保留的配置文件（这些会被跟踪）:
+# *.yaml (除了 installation.yaml)
+# *.custom.yaml
+# *.dict.yaml
+# *.schema.yaml
+# *.lua
+# opencc/ 目录下的配置文件

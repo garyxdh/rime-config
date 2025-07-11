@@ -1,0 +1,131 @@
+# Rime squirrel 自定义配置 - macOS 原生风格
+# encoding: utf-8
+
+patch:
+  # 使用 macOS 原生风格主题
+  style/color_scheme: minimal_gray
+
+  # macOS 原生风格显示参数
+  style/horizontal: true # 横向排布候选词
+  style/font_point: 14 # 字体大小，符合 macOS 标准
+  style/label_font_point: 11 # 标签字体大小
+  style/comment_font_point: 11 # 注释字体大小
+  style/line_spacing: 4 # 行间距，更符合 macOS 标准
+  style/spacing: 8 # 候选词间距，更符合 macOS 标准
+  style/border_width: 1 # 细边框，符合 macOS 设计
+  style/border_height: 1 # 细边框
+  style/corner_radius: 8 # macOS 标准圆角
+  style/font_face: "PingFangSC-Regular" # 使用系统字体
+  style/alpha: 0.95 # 轻微透明度，增强 macOS 原生感
+
+  # macOS 原生风格配色方案
+  preset_color_schemes/macos_native:
+    name: "macOS 原生风格／macOS Native"
+    author: "Custom"
+    back_color: 0x1e1e1e # macOS 深色模式背景色
+    border_color: 0x333333 # macOS 深色模式边框色
+    candidate_text_color: 0xffffff # 候选词文字色（纯白）
+    comment_text_color: 0x999999 # 注释文字色（macOS 标准灰）
+    text_color: 0xffffff # 输入文字色（纯白）
+    hilited_candidate_back_color: 0x007aff # macOS 蓝色高亮
+    hilited_candidate_text_color: 0xffffff # 选中文字色（白色）
+    hilited_text_color: 0xffffff # 高亮输入文字色
+    label_color: 0x666666 # 标签色（深灰）
+    horizontal: true # 水平布局
+    inline_preedit: true # 内联预编辑
+
+  # 浅色主题配色方案（可选）
+  preset_color_schemes/macos_light:
+    name: "macOS 浅色风格／macOS Light"
+    author: "Custom"
+    back_color: 0xf5f5f5 # macOS 浅色模式背景色
+    border_color: 0xcccccc # macOS 浅色模式边框色
+    candidate_text_color: 0x000000 # 候选词文字色（黑色）
+    comment_text_color: 0x666666 # 注释文字色（深灰）
+    text_color: 0x000000 # 输入文字色（黑色）
+    hilited_candidate_back_color: 0x007aff # macOS 蓝色高亮
+    hilited_candidate_text_color: 0xffffff # 选中文字色（白色）
+    hilited_text_color: 0x000000 # 高亮输入文字色
+    label_color: 0x999999 # 标签色（中灰）
+    horizontal: true # 水平布局
+    inline_preedit: true # 内联预编辑
+
+  # 北欧风格配色方案
+  preset_color_schemes/nordic:
+    name: "北欧风格／Nordic"
+    author: "Custom"
+    back_color: 0x2e3440 # 深灰蓝背景
+    border_color: 0x3b4252 # 边框色
+    candidate_text_color: 0xd8dee9 # 候选词文字色（雪白）
+    comment_text_color: 0x81a1c1 # 注释文字色（冰蓝）
+    text_color: 0xeceff4 # 输入文字色（极地雪）
+    hilited_candidate_back_color: 0x5e81ac # 高亮背景（深蓝）
+    hilited_candidate_text_color: 0xeceff4 # 选中文字色（极地雪）
+    hilited_text_color: 0xd8dee9 # 高亮输入文字色
+    label_color: 0x4c566a # 标签色（中灰）
+    horizontal: true
+    inline_preedit: true
+
+  # 温暖橙色配色方案
+  preset_color_schemes/warm_orange:
+    name: "温暖橙色／Warm Orange"
+    author: "Custom"
+    back_color: 0x1a1a1a # 深黑背景
+    border_color: 0x2d2d2d # 边框色
+    candidate_text_color: 0xf5f5f5 # 候选词文字色（浅白）
+    comment_text_color: 0xb8b8b8 # 注释文字色（中灰）
+    text_color: 0xf5f5f5 # 输入文字色（浅白）
+    hilited_candidate_back_color: 0xff8c00 # 高亮背景（深橙）
+    hilited_candidate_text_color: 0x000000 # 选中文字色（黑色）
+    hilited_text_color: 0xff8c00 # 高亮输入文字色（深橙）
+    label_color: 0x666666 # 标签色（深灰）
+    horizontal: true
+    inline_preedit: true
+
+  # 薄荷绿配色方案
+  preset_color_schemes/mint_green:
+    name: "薄荷绿／Mint Green"
+    author: "Custom"
+    back_color: 0x1e1e1e # 深黑背景
+    border_color: 0x2a2a2a # 边框色
+    candidate_text_color: 0xf0f0f0 # 候选词文字色（浅白）
+    comment_text_color: 0xa0a0a0 # 注释文字色（中灰）
+    text_color: 0xf0f0f0 # 输入文字色（浅白）
+    hilited_candidate_back_color: 0x00d4aa # 高亮背景（薄荷绿）
+    hilited_candidate_text_color: 0x000000 # 选中文字色（黑色）
+    hilited_text_color: 0x00d4aa # 高亮输入文字色（薄荷绿）
+    label_color: 0x666666 # 标签色（深灰）
+    horizontal: true
+    inline_preedit: true
+
+  # 紫色梦幻配色方案
+  preset_color_schemes/purple_dream:
+    name: "紫色梦幻／Purple Dream"
+    author: "Custom"
+    back_color: 0x1a1a2e # 深紫背景
+    border_color: 0x16213e # 边框色
+    candidate_text_color: 0xe94560 # 候选词文字色（玫瑰红）
+    comment_text_color: 0x9d84b7 # 注释文字色（淡紫）
+    text_color: 0xf39c12 # 输入文字色（金黄）
+    hilited_candidate_back_color: 0x8e44ad # 高亮背景（紫色）
+    hilited_candidate_text_color: 0xffffff # 选中文字色（白色）
+    hilited_text_color: 0xe94560 # 高亮输入文字色（玫瑰红）
+    label_color: 0x7f8c8d # 标签色（银灰）
+    horizontal: true
+    inline_preedit: true
+
+  # 简约灰配色方案
+  preset_color_schemes/minimal_gray:
+    name: "简约灰／Minimal Gray"
+    author: "Custom"
+    back_color: 0x2d2d2d # 中灰背景
+    border_color: 0x404040 # 边框色
+    candidate_text_color: 0xf8f8f2 # 候选词文字色（象牙白）
+    comment_text_color: 0xa6a6a6 # 注释文字色（中灰）
+    text_color: 0xf8f8f2 # 输入文字色（象牙白）
+    hilited_candidate_back_color: 0x404040 # 高亮背景（深灰）
+    hilited_candidate_text_color: 0xffffff # 选中文字色（纯白）
+    hilited_text_color: 0xf8f8f2 # 高亮输入文字色
+    label_color: 0x808080 # 标签色（中灰）
+    horizontal: true
+    inline_preedit: true

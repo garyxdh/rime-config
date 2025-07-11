@@ -1,0 +1,55 @@
+# 简体拼音方案自定义配置
+# encoding: utf-8
+
+patch:
+  # 设置默认状态
+  switches:
+    - name: ascii_mode
+      reset: 0 # 默认中文模式
+      states: [中文, 西文]
+    - name: full_shape
+      reset: 0 # 默认半角符号
+      states: [半角, 全角]
+    - name: ascii_punct
+      reset: 0 # 默认中文标点
+      states: [。，, ．，]
+    - name: zh_simp
+      reset: 1 # 默认简体
+      states: [漢字, 汉字]
+
+  # 确保简化器正确配置 - 只显示简体，不显示繁体提示
+  simplifier:
+    option_name: zh_simp
+    tips: none
+
+  # 自定义标点符号配置
+  punctuator/half_shape/+:
+    "\\": "、" # 使用数组格式，只保留顿号
+    "/": "/" # 使用数组格式，只保留斜杠
+    ",": "，"
+    ".": "。"
+    "[": "【" # 使用数组格式，只保留方括号
+    "]": "】" # 使用数组格式，只保留方括号
+    "_": "——" # 使用直接值格式
+    "'''": { pair: ["'", "'"] } # 单引号转换为中文引号
+    '"': { pair: ["“", "”"] } # 双引号转换为中文引号
+
+  # 按键绑定配置 - 支持Shift键直接输出原始英文输入
+  key_binder:
+    bindings/+:
+      # 当正在输入或有候选菜单时，按Shift键输出原始的英文字母输入
+      - { when: composing, accept: Shift_L, send: Escape }
+      - { when: composing, accept: Shift_R, send: Escape }
+      - { when: has_menu, accept: Shift_L, send: Escape }
+      - { when: has_menu, accept: Shift_R, send: Escape }
+
+  # 启用内联ASCII模式配置
+  ascii_composer:
+    good_old_caps_lock: true
+    switch_key:
+      Shift_L: commit_code # 提交原始输入码
+      Shift_R: commit_code # 提交原始输入码
+      Control_L: noop
+      Control_R: noop
+      Caps_Lock: clear
+      Eisu_toggle: clear
