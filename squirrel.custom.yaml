@@ -1,22 +1,47 @@
-# Rime squirrel 自定义配置 - macOS 原生风格
+# Rime squirrel 自定义配置 - Apple & macOS 风格主题集合
 # encoding: utf-8
+#
+# 🎨 可用主题列表：
+#   - macos_bigsur_light    (macOS Big Sur 浅色)
+#   - macos_bigsur_dark     (macOS Big Sur 深色)
+#   - ios_style             (iOS 风格)
+#   - apple_classic_blue    (Apple 经典蓝)
+#   - apple_modern_minimal  (Apple 现代简约)
+#   - apple_space_gray      (Apple 深空灰)
+#   - apple_midnight_blue   (Apple 午夜蓝)
+#   - apple_rose_gold       (Apple 玫瑰金)
+#   - apple_mint_green      (Apple 薄荷绿)
+#   - apple_monochrome      (Apple 极简黑白)
+#   - apple_gradient_purple (Apple 渐变紫)
+#   - wechat_light          (微信浅色)
+#   - wechat_dark           (微信深色)
+#   - macos_native          (macOS 原生深色)
+#   - macos_light           (macOS 原生浅色)
+#   - nordic                (北欧风格)
+#   - warm_orange           (温暖橙色)
+#   - mint_green            (薄荷绿)
+#   - purple_dream          (紫色梦幻)
+#   - minimal_gray          (简约灰)
+#
+# 💡 使用方法：修改下面的 color_scheme 值为你喜欢的主题名称，然后重新部署 Rime
 
 patch:
-  # 使用 macOS 原生风格主题
+  # 当前使用主题 - 可以改为上面列表中的任意主题名称
   style/color_scheme: minimal_gray
 
-  # macOS 原生风格显示参数
+  # 通用显示参数 - 只保留不会与主题冲突的设置
   style/horizontal: true # 横向排布候选词
-  style/font_point: 14 # 字体大小，符合 macOS 标准
-  style/label_font_point: 11 # 标签字体大小
-  style/comment_font_point: 11 # 注释字体大小
-  style/line_spacing: 4 # 行间距，更符合 macOS 标准
-  style/spacing: 8 # 候选词间距，更符合 macOS 标准
-  style/border_width: 1 # 细边框，符合 macOS 设计
-  style/border_height: 1 # 细边框
-  style/corner_radius: 8 # macOS 标准圆角
-  style/font_face: "PingFangSC-Regular" # 使用系统字体
-  style/alpha: 0.95 # 轻微透明度，增强 macOS 原生感
+  style/inline_preedit: true # 内嵌预编辑
+  style/font_point: 14
+  style/label_font_point: 11
+  style/comment_font_point: 11
+  style/line_spacing: 4
+  style/spacing: 8
+  style/border_width: 1
+  style/border_height: 1
+  style/corner_radius: 8
+  style/font_face: "PingFangSC-Regular"
+  style/alpha: 0.95
 
   # 状态显示配置 - 显示中英文和大小写状态
   show_notifications_when_mode_changes: true # 模式切换时显示通知
@@ -32,7 +57,7 @@ patch:
     candidate_text_color: 0xffffff # 候选词文字色（纯白）
     comment_text_color: 0x999999 # 注释文字色（macOS 标准灰）
     text_color: 0xffffff # 输入文字色（纯白）
-    hilited_candidate_back_color: 0x007aff # macOS 蓝色高亮
+    hilited_candidate_back_color: 0xFF7A00 # macOS 蓝色高亮 (BGR: 0x007AFF -> 0xFF7A00)
     hilited_candidate_text_color: 0xffffff # 选中文字色（白色）
     hilited_text_color: 0xffffff # 高亮输入文字色
     label_color: 0x666666 # 标签色（深灰）
@@ -46,7 +71,7 @@ patch:
     candidate_text_color: 0x000000 # 候选词文字色（黑色）
     comment_text_color: 0x666666 # 注释文字色（深灰）
     text_color: 0x000000 # 输入文字色（黑色）
-    hilited_candidate_back_color: 0x007aff # macOS 蓝色高亮
+    hilited_candidate_back_color: 0xFF7A00 # macOS 蓝色高亮 (BGR: 0x007AFF -> 0xFF7A00)
     hilited_candidate_text_color: 0xffffff # 选中文字色（白色）
     hilited_text_color: 0x000000 # 高亮输入文字色
     label_color: 0x999999 # 标签色（中灰）
@@ -55,15 +80,15 @@ patch:
   preset_color_schemes/nordic:
     name: "北欧风格／Nordic"
     author: "Custom"
-    back_color: 0x2e3440 # 深灰蓝背景
-    border_color: 0x3b4252 # 边框色
-    candidate_text_color: 0xd8dee9 # 候选词文字色（雪白）
-    comment_text_color: 0x81a1c1 # 注释文字色（冰蓝）
-    text_color: 0xeceff4 # 输入文字色（极地雪）
-    hilited_candidate_back_color: 0x5e81ac # 高亮背景（深蓝）
-    hilited_candidate_text_color: 0xeceff4 # 选中文字色（极地雪）
-    hilited_text_color: 0xd8dee9 # 高亮输入文字色
-    label_color: 0x4c566a # 标签色（中灰）
+    back_color: 0x40342e # 深灰蓝背景 (BGR: 0x2e3440 -> 0x40342e)
+    border_color: 0x52423b # 边框色 (BGR: 0x3b4252 -> 0x52423b)
+    candidate_text_color: 0xe9ded8 # 候选词文字色（雪白）(BGR: 0xd8dee9 -> 0xe9ded8)
+    comment_text_color: 0xc1a181 # 注释文字色（冰蓝）(BGR: 0x81a1c1 -> 0xc1a181)
+    text_color: 0xf4efec # 输入文字色（极地雪）(BGR: 0xeceff4 -> 0xf4efec)
+    hilited_candidate_back_color: 0xac815e # 高亮背景（深蓝）(BGR: 0x5e81ac -> 0xac815e)
+    hilited_candidate_text_color: 0xf4efec # 选中文字色（极地雪）(BGR)
+    hilited_text_color: 0xe9ded8 # 高亮输入文字色 (BGR)
+    label_color: 0x6a564c # 标签色（中灰）(BGR: 0x4c566a -> 0x6a564c)
 
   # 温暖橙色配色方案
   preset_color_schemes/warm_orange:
@@ -74,9 +99,9 @@ patch:
     candidate_text_color: 0xf5f5f5 # 候选词文字色（浅白）
     comment_text_color: 0xb8b8b8 # 注释文字色（中灰）
     text_color: 0xf5f5f5 # 输入文字色（浅白）
-    hilited_candidate_back_color: 0xff8c00 # 高亮背景（深橙）
-    hilited_candidate_text_color: 0x000000 # 选中文字色（黑色）
-    hilited_text_color: 0xff8c00 # 高亮输入文字色（深橙）
+    hilited_candidate_back_color: 0x008cff # 高亮背景（橙色 BGR: 0xff8c00 -> 0x008cff）
+    hilited_candidate_text_color: 0xffffff # 选中文字色（纯白）
+    hilited_text_color: 0x008cff # 高亮输入文字色（橙色 BGR）
     label_color: 0x666666 # 标签色（深灰）
 
   # 薄荷绿配色方案
@@ -88,24 +113,24 @@ patch:
     candidate_text_color: 0xf0f0f0 # 候选词文字色（浅白）
     comment_text_color: 0xa0a0a0 # 注释文字色（中灰）
     text_color: 0xf0f0f0 # 输入文字色（浅白）
-    hilited_candidate_back_color: 0x00d4aa # 高亮背景（薄荷绿）
-    hilited_candidate_text_color: 0x000000 # 选中文字色（黑色）
-    hilited_text_color: 0x00d4aa # 高亮输入文字色（薄荷绿）
+    hilited_candidate_back_color: 0xAAD400 # 高亮背景（薄荷绿）(BGR: 0x00D4AA -> 0xAAD400)
+    hilited_candidate_text_color: 0xffffff # 选中文字色（纯白）
+    hilited_text_color: 0xAAD400 # 高亮输入文字色（薄荷绿）(BGR)
     label_color: 0x666666 # 标签色（深灰）
 
   # 紫色梦幻配色方案
   preset_color_schemes/purple_dream:
     name: "紫色梦幻／Purple Dream"
     author: "Custom"
-    back_color: 0x1a1a2e # 深紫背景
-    border_color: 0x16213e # 边框色
-    candidate_text_color: 0xe94560 # 候选词文字色（玫瑰红）
-    comment_text_color: 0x9d84b7 # 注释文字色（淡紫）
-    text_color: 0xf39c12 # 输入文字色（金黄）
-    hilited_candidate_back_color: 0x8e44ad # 高亮背景（紫色）
+    back_color: 0x2e1a1a # 深紫背景 (BGR: 0x1a1a2e -> 0x2e1a1a)
+    border_color: 0x3e2116 # 边框色 (BGR: 0x16213e -> 0x3e2116)
+    candidate_text_color: 0x6045e9 # 候选词文字色（玫瑰红）(BGR: 0xe94560 -> 0x6045e9)
+    comment_text_color: 0xb7849d # 注释文字色（淡紫）(BGR: 0x9d84b7 -> 0xb7849d)
+    text_color: 0x129cf3 # 输入文字色（金黄）(BGR: 0xf39c12 -> 0x129cf3)
+    hilited_candidate_back_color: 0xad448e # 高亮背景（紫色）(BGR: 0x8e44ad -> 0xad448e)
     hilited_candidate_text_color: 0xffffff # 选中文字色（白色）
-    hilited_text_color: 0xe94560 # 高亮输入文字色（玫瑰红）
-    label_color: 0x7f8c8d # 标签色（银灰）
+    hilited_text_color: 0x6045e9 # 高亮输入文字色（玫瑰红）(BGR)
+    label_color: 0x8d8c7f # 标签色（银灰）(BGR: 0x7f8c8d -> 0x8d8c7f)
 
   # 简约灰配色方案
   preset_color_schemes/minimal_gray:
@@ -120,3 +145,252 @@ patch:
     hilited_candidate_text_color: 0xffffff # 选中文字色（纯白）
     hilited_text_color: 0xf8f8f2 # 高亮输入文字色
     label_color: 0x808080 # 标签色（中灰）
+
+  # === Apple & macOS 风格主题系列 ===
+
+  # macOS Big Sur 浅色主题
+  preset_color_schemes/macos_bigsur_light:
+    name: "macOS Big Sur 浅色／macOS Big Sur Light"
+    author: "Apple Style"
+    back_color: 0xFFFFFF # 纯白背景
+    border_color: 0xE5E5E5 # 浅灰边框
+    candidate_text_color: 0x000000 # 黑色文字
+    comment_text_color: 0x999999 # 中灰注释
+    text_color: 0x000000 # 黑色输入文字
+    hilited_candidate_back_color: 0xFF7A00 # Apple 蓝色高亮 (BGR: 0x007AFF -> 0xFF7A00)
+    hilited_candidate_text_color: 0xFFFFFF # 白色选中文字
+    hilited_text_color: 0xFF7A00 # 蓝色高亮输入文字 (BGR)
+    label_color: 0x666666 # 深灰标签
+    font_face: "SF Pro Display" # Apple 官方字体
+    font_point: 16
+    corner_radius: 8 # Apple 标准圆角
+    line_spacing: 4
+    spacing: 8
+
+  # macOS Big Sur 深色主题
+  preset_color_schemes/macos_bigsur_dark:
+    name: "macOS Big Sur 深色／macOS Big Sur Dark"
+    author: "Apple Style"
+    back_color: 0x1E1C1C # Apple 深色背景 (BGR)
+    border_color: 0x2E2C2C # 深灰边框 (BGR)
+    candidate_text_color: 0xFFFFFF # 白色文字
+    comment_text_color: 0x938E8E # Apple 系统灰 (BGR)
+    text_color: 0xFFFFFF # 白色输入文字
+    hilited_candidate_back_color: 0xFF840A # Apple 深色模式蓝 (BGR: 0x0A84FF -> 0xFF840A)
+    hilited_candidate_text_color: 0xFFFFFF # 白色选中文字
+    hilited_text_color: 0xFF840A # 蓝色高亮输入文字 (BGR)
+    label_color: 0x938E8E # Apple 系统灰标签 (BGR)
+    font_face: "SF Pro Display"
+    font_point: 16
+    corner_radius: 8
+    line_spacing: 4
+    spacing: 8
+
+  # iOS 风格主题
+  preset_color_schemes/ios_style:
+    name: "iOS 风格／iOS Style"
+    author: "Apple iOS"
+    back_color: 0xF7F2F2 # iOS 背景色 (BGR: 0xF2F2F7 -> 0xF7F2F2)
+    border_color: 0xCCC7C7 # iOS 边框色 (BGR: 0xC7C7CC -> 0xCCC7C7)
+    candidate_text_color: 0x000000 # 黑色文字
+    comment_text_color: 0x938E8E # iOS 系统灰 (BGR: 0x8E8E93 -> 0x938E8E)
+    text_color: 0x000000 # 黑色输入文字
+    hilited_candidate_back_color: 0xFF7A00 # iOS 蓝色 (BGR: 0x007AFF -> 0xFF7A00)
+    hilited_candidate_text_color: 0xFFFFFF # 白色选中文字
+    hilited_text_color: 0xFF7A00 # 蓝色高亮输入文字 (BGR)
+    label_color: 0x938E8E # iOS 系统灰标签 (BGR)
+    font_face: "PingFangSC-Regular" # 中文优化字体
+    font_point: 15
+    corner_radius: 10 # iOS 风格圆角
+    line_spacing: 5
+    spacing: 10
+
+  # Apple 经典蓝色主题
+  preset_color_schemes/apple_classic_blue:
+    name: "Apple 经典蓝／Apple Classic Blue"
+    author: "Apple Classic"
+    back_color: 0xFFFFFF # 纯白背景
+    border_color: 0xD6D1D1 # Apple 浅灰边框 (BGR)
+    candidate_text_color: 0x1F1D1D # Apple 深色文字 (BGR)
+    comment_text_color: 0x938E8E # Apple 系统灰 (BGR)
+    text_color: 0x1F1D1D # Apple 深色输入文字 (BGR)
+    hilited_candidate_back_color: 0xFF7A00 # Apple 经典蓝 (BGR: 0x007AFF -> 0xFF7A00)
+    hilited_candidate_text_color: 0xFFFFFF # 白色选中文字
+    hilited_text_color: 0xFF7A00 # 蓝色高亮输入文字 (BGR)
+    label_color: 0x938E8E # Apple 系统灰标签 (BGR)
+    font_face: "SF Pro Text" # Apple 文本字体
+    font_point: 14
+    corner_radius: 6
+    line_spacing: 4
+    spacing: 8
+
+  # 微信浅色主题
+  preset_color_schemes/wechat_light:
+    name: "微信浅色／WeChat Light"
+    author: "WeChat Style"
+    back_color: 0xFFFFFF # 纯白背景
+    border_color: 0xE5E5E5 # 浅灰边框
+    candidate_text_color: 0x3C3C3C # 深灰文字
+    comment_text_color: 0x999999 # 中灰注释
+    text_color: 0x424242 # 深灰输入文字
+    hilited_candidate_back_color: 0x22AF79 # 微信绿色 (BGR: 0x79AF22 -> 0x22AF79)
+    hilited_candidate_text_color: 0xFFFFFF # 白色选中文字
+    hilited_text_color: 0x22AF79 # 绿色高亮输入文字 (BGR)
+    label_color: 0x999999 # 中灰标签
+    font_face: "PingFangSC-Regular"
+    font_point: 16
+    corner_radius: 5
+    line_spacing: 5
+    spacing: 10
+
+  # 微信深色主题
+  preset_color_schemes/wechat_dark:
+    name: "微信深色／WeChat Dark"
+    author: "WeChat Style"
+    back_color: 0x151515 # 深黑背景
+    border_color: 0x292929 # 深灰边框
+    candidate_text_color: 0xBBBBBB # 浅灰文字
+    comment_text_color: 0x999999 # 中灰注释
+    text_color: 0xBBBBBB # 浅灰输入文字
+    hilited_candidate_back_color: 0x22AF79 # 微信绿色 (BGR: 0x79AF22 -> 0x22AF79)
+    hilited_candidate_text_color: 0xFFFFFF # 白色选中文字
+    hilited_text_color: 0x22AF79 # 绿色高亮输入文字 (BGR)
+    label_color: 0x999999 # 中灰标签
+    font_face: "PingFangSC-Regular"
+    font_point: 16
+    corner_radius: 5
+    line_spacing: 5
+    spacing: 10
+
+  # Apple 现代简约主题
+  preset_color_schemes/apple_modern_minimal:
+    name: "Apple 现代简约／Apple Modern Minimal"
+    author: "Modern Apple"
+    back_color: 0xFAFAFA # 极浅灰背景
+    border_color: 0xE0E0E0 # 浅灰边框
+    candidate_text_color: 0x1D1D1F # Apple 深色文字
+    comment_text_color: 0x6D6D70 # Apple 中灰
+    text_color: 0x1D1D1F # Apple 深色输入文字
+    hilited_candidate_back_color: 0x59C734 # Apple 绿色 (BGR: 0x34C759 -> 0x59C734)
+    hilited_candidate_text_color: 0xFFFFFF # 白色选中文字
+    hilited_text_color: 0x59C734 # 绿色高亮输入文字 (BGR)
+    label_color: 0x6D6D70 # Apple 中灰标签
+    font_face: "SF Pro Display"
+    font_point: 15
+    corner_radius: 12 # 现代大圆角
+    line_spacing: 6
+    spacing: 12
+
+  # Apple 深空灰主题
+  preset_color_schemes/apple_space_gray:
+    name: "Apple 深空灰／Apple Space Gray"
+    author: "Apple Space Gray"
+    back_color: 0x2C2C2E # Apple 深空灰背景
+    border_color: 0x3A3A3C # 深灰边框
+    candidate_text_color: 0xF2F2F7 # Apple 浅色文字
+    comment_text_color: 0x8E8E93 # Apple 系统灰
+    text_color: 0xF2F2F7 # Apple 浅色输入文字
+    hilited_candidate_back_color: 0x0A9FFF # Apple 橙色 (BGR: 0xFF9F0A -> 0x0A9FFF)
+    hilited_candidate_text_color: 0xffffff # 白色选中文字
+    hilited_text_color: 0x0A9FFF # 橙色高亮输入文字 (BGR)
+    label_color: 0x8E8E93 # Apple 系统灰标签
+    font_face: "SF Pro Display"
+    font_point: 15
+    corner_radius: 8
+    line_spacing: 4
+    spacing: 8
+
+  # Apple 午夜蓝主题
+  preset_color_schemes/apple_midnight_blue:
+    name: "Apple 午夜蓝／Apple Midnight Blue"
+    author: "Apple Midnight"
+    back_color: 0x2E1A1A # 午夜蓝背景 (BGR: 0x1A1A2E -> 0x2E1A1A)
+    border_color: 0x3E2116 # 深蓝边框 (BGR: 0x16213E -> 0x3E2116)
+    candidate_text_color: 0xE7E3E3 # 浅色文字 (BGR: 0xE3E3E7 -> 0xE7E3E3)
+    comment_text_color: 0xB7849D # 淡紫注释 (BGR: 0x9D84B7 -> 0xB7849D)
+    text_color: 0x129CF3 # 金黄输入文字 (BGR: 0xF39C12 -> 0x129CF3)
+    hilited_candidate_back_color: 0x60340F # 深蓝高亮 (BGR: 0x0F3460 -> 0x60340F)
+    hilited_candidate_text_color: 0xFFFFFF # 白色选中文字
+    hilited_text_color: 0x6045E9 # 玫瑰红高亮输入文字 (BGR: 0xE94560 -> 0x6045E9)
+    label_color: 0x8D8C7F # 银灰标签 (BGR: 0x7F8C8D -> 0x8D8C7F)
+    font_face: "SF Pro Display"
+    font_point: 15
+    corner_radius: 10
+    line_spacing: 5
+    spacing: 10
+
+  # Apple 玫瑰金主题
+  preset_color_schemes/apple_rose_gold:
+    name: "Apple 玫瑰金／Apple Rose Gold"
+    author: "Apple Rose Gold"
+    back_color: 0xF0F8FF # 温暖白色背景 (BGR: 0xFFF8F0 -> 0xF0F8FF)
+    border_color: 0xC4D5E8 # 玫瑰金边框 (BGR: 0xE8D5C4 -> 0xC4D5E8)
+    candidate_text_color: 0x13458B # 棕色文字 (BGR: 0x8B4513 -> 0x13458B)
+    comment_text_color: 0x3F85CD # 沙棕注释 (BGR: 0xCD853F -> 0x3F85CD)
+    text_color: 0x13458B # 棕色输入文字 (BGR: 0x8B4513 -> 0x13458B)
+    hilited_candidate_back_color: 0x796EB7 # 玫瑰金高亮 (BGR: 0xB76E79 -> 0x796EB7)
+    hilited_candidate_text_color: 0xFFFFFF # 白色选中文字
+    hilited_text_color: 0x796EB7 # 玫瑰金高亮输入文字 (BGR)
+    label_color: 0x3F85CD # 沙棕标签 (BGR: 0xCD853F -> 0x3F85CD)
+    font_face: "SF Pro Display"
+    font_point: 15
+    corner_radius: 8
+    line_spacing: 4
+    spacing: 8
+
+  # Apple 薄荷绿主题
+  preset_color_schemes/apple_mint_green:
+    name: "Apple 薄荷绿／Apple Mint Green"
+    author: "Apple Mint"
+    back_color: 0xF0FFF0 # 薄荷白背景
+    border_color: 0xD0E7D0 # 薄荷绿边框
+    candidate_text_color: 0x2F4F2F # 深绿文字
+    comment_text_color: 0x8FBC8F # 浅绿注释
+    text_color: 0x2F4F2F # 深绿输入文字
+    hilited_candidate_back_color: 0xAAD400 # 薄荷绿高亮 (BGR: 0x00D4AA -> 0xAAD400)
+    hilited_candidate_text_color: 0xffffff # 白色选中文字
+    hilited_text_color: 0xAAD400 # 薄荷绿高亮输入文字 (BGR)
+    label_color: 0x8FBC8F # 浅绿标签
+    font_face: "SF Pro Display"
+    font_point: 15
+    corner_radius: 10
+    line_spacing: 5
+    spacing: 10
+
+  # Apple 极简黑白主题
+  preset_color_schemes/apple_monochrome:
+    name: "Apple 极简黑白／Apple Monochrome"
+    author: "Apple Minimal"
+    back_color: 0xFFFFFF # 纯白背景
+    border_color: 0x000000 # 纯黑边框
+    candidate_text_color: 0x000000 # 纯黑文字
+    comment_text_color: 0x666666 # 中灰注释
+    text_color: 0x000000 # 纯黑输入文字
+    hilited_candidate_back_color: 0x000000 # 纯黑高亮
+    hilited_candidate_text_color: 0xFFFFFF # 纯白选中文字
+    hilited_text_color: 0x000000 # 纯黑高亮输入文字
+    label_color: 0x666666 # 中灰标签
+    font_face: "SF Pro Display"
+    font_point: 15
+    corner_radius: 0 # 无圆角，极简风格
+    line_spacing: 3
+    spacing: 6
+
+  # Apple 渐变紫主题
+  preset_color_schemes/apple_gradient_purple:
+    name: "Apple 渐变紫／Apple Gradient Purple"
+    author: "Apple Purple"
+    back_color: 0x8C144A # 深紫背景 (BGR: 0x4A148C -> 0x8C144A)
+    border_color: 0x9A1B6A # 紫色边框 (BGR: 0x6A1B9A -> 0x9A1B6A)
+    candidate_text_color: 0xE7BEE1 # 淡紫文字 (BGR: 0xE1BEE7 -> 0xE7BEE1)
+    comment_text_color: 0xC868BA # 中紫注释 (BGR: 0xBA68C8 -> 0xC868BA)
+    text_color: 0xE7BEE1 # 淡紫输入文字 (BGR: 0xE1BEE7 -> 0xE7BEE1)
+    hilited_candidate_back_color: 0xB0279C # 紫色高亮 (BGR: 0x9C27B0 -> 0xB0279C)
+    hilited_candidate_text_color: 0xFFFFFF # 白色选中文字
+    hilited_text_color: 0xE7BEE1 # 淡紫高亮输入文字 (BGR)
+    label_color: 0xC868BA # 中紫标签 (BGR: 0xBA68C8 -> 0xC868BA)
+    font_face: "SF Pro Display"
+    font_point: 15
+    corner_radius: 12
+    line_spacing: 5
+    spacing: 10
