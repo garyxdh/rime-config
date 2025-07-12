@@ -43,3 +43,5 @@ user.yaml
 # *.schema.yaml
 # *.lua
 # opencc/ 目录下的配置文件
+
+.claude

@@ -2,15 +2,16 @@
 # encoding: utf-8
 
 patch:
-  # 简化输入方案列表，只保留简体拼音
+  # 简化输入方案列表，只保留简体拼音和英文输入
   schema_list:
     - schema: luna_pinyin_simp # 朙月拼音·简化字
+    - schema: melt_eng # 英文输入（支持自动补全）
 
   # 简化切换器选项
   switcher:
     caption: 〔方案選單〕
     hotkeys:
-      - Control+grave
+      - Alt+grave # Option+` (在 macOS 上 Alt 就是 Option 键)
       - F4
     save_options:
       - ascii_mode # 中英文切换

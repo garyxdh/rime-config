@@ -35,17 +35,20 @@ patch:
     "'''": { pair: ["'", "'"] } # 单引号转换为中文引号
     '"': { pair: ["“", "”"] } # 双引号转换为中文引号
 
-  # 按键绑定配置 - 包含默认翻页功能和Shift键支持
+  # 按键绑定配置 - 保持默认数字键选词功能
   key_binder:
-    import_preset: default # 导入默认按键绑定，包括翻页功能
-    bindings/+:
-      # 当正在输入或有候选菜单时，按Shift键输出原始的英文字母输入
-      - { when: composing, accept: Shift_L, send: Escape }
-      - { when: composing, accept: Shift_R, send: Escape }
-      - { when: has_menu, accept: Shift_L, send: Escape }
-      - { when: has_menu, accept: Shift_R, send: Escape }
-      # Caps Lock 状态切换显示
-      - { when: always, accept: Caps_Lock, toggle: ascii_mode }
+    import_preset: default # 导入默认按键绑定，包括数字键选词和翻页功能
+    bindings:
+      __patch:
+        - luna_pinyin_simp.schema:/key_binder/bindings # 继承原方案的按键绑定
+      __append:
+        # 当正在输入或有候选菜单时，按Shift键输出原始的英文字母输入
+        - { when: composing, accept: Shift_L, send: Escape }
+        - { when: composing, accept: Shift_R, send: Escape }
+        - { when: has_menu, accept: Shift_L, send: Escape }
+        - { when: has_menu, accept: Shift_R, send: Escape }
+        # Caps Lock 状态切换显示
+        - { when: always, accept: Caps_Lock, toggle: ascii_mode }
 
   # 启用内联ASCII模式配置
   ascii_composer:
@@ -55,7 +58,7 @@ patch:
       Shift_R: commit_code # 提交原始输入码
       Control_L: noop
       Control_R: noop
-      Caps_Lock: commit_code
+      Caps_Lock: clear
       Eisu_toggle: clear
 
   # 模糊音和拼写纠错配置 - 使用Rime内置的通用纠错系统
@@ -88,6 +91,16 @@ patch:
     initial_quality: 0.8 # 提高技术词汇的优先级
     spelling_hints: 0 # 关闭拼写提示
 
+  # 添加英文词汇翻译器 (支持英文自动补全)
+  english_translator:
+    dictionary: melt_eng
+    enable_completion: true # 启用英文自动补全
+    enable_sentence: false
+    initial_quality: 0.9 # 英文词汇优先级
+    spelling_hints: 0 # 关闭拼写提示
+    comment_format: # 不显示注释
+      - xform/.*/
+
   # 优化翻译器设置 - 主翻译器(script_translator)
   # 注意：重复的翻译器配置已移至 grammar.custom.yaml 统一管理
   translator:
@@ -95,9 +108,13 @@ patch:
     # enable_completion: true # script_translator 不支持此选项
     spelling_hints: 0 # 关闭拼写提示
 
-  # 添加技术词汇翻译器到引擎
+  # 添加技术词汇翻译器和英文翻译器到引擎
   engine/translators/+:
     - table_translator@tech_translator
+    - table_translator@english_translator
+
+  # 添加英文识别模式
+  recognizer/patterns/english: "^[A-Za-z][-_+.'0-9A-Za-z]*$"
 
 # 自定义模糊音定义 - 采用标准的Rime模糊音格式
 fuzzy_pinyin:
