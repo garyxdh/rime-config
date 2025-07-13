@@ -22,12 +22,13 @@
 #   - mint_green            (薄荷绿)
 #   - purple_dream          (紫色梦幻)
 #   - minimal_gray          (简约灰)
+#   - oscilloscope_green    (示波器萤光绿)
 #
 # 💡 使用方法：修改下面的 color_scheme 值为你喜欢的主题名称，然后重新部署 Rime
 
 patch:
   # 当前使用主题 - 可以改为上面列表中的任意主题名称
-  style/color_scheme: minimal_gray
+  style/color_scheme: oscilloscope_green
 
   # 通用显示参数 - 只保留不会与主题冲突的设置
   style/horizontal: true # 横向排布候选词
@@ -394,3 +395,24 @@ patch:
     corner_radius: 12
     line_spacing: 5
     spacing: 10
+
+  # 示波器萤光绿主题
+  preset_color_schemes/oscilloscope_green:
+    name: "示波器萤光绿／Oscilloscope Green"
+    author: "Oscilloscope Style"
+    back_color: 0x000000 # 纯黑背景，模拟示波器屏幕
+    border_color: 0x001100 # 深绿边框，微弱的绿色边框
+    candidate_text_color: 0x00FF00 # 萤光绿候选词文字，经典示波器绿色
+    comment_text_color: 0x00AA00 # 中等亮度绿色注释，稍暗的绿色
+    text_color: 0x00FF00 # 萤光绿输入文字，与候选词一致
+    hilited_candidate_back_color: 0x000000 # 高亮背景与普通背景一致，无高亮效果
+    hilited_candidate_text_color: 0x00FF00 # 高亮文字与普通候选词一致，无高亮效果
+    hilited_text_color: 0x00FF00 # 高亮输入文字与普通输入文字一致
+    label_color: 0x00AA00 # 中等亮度绿色标签
+    font_face: "Monaco" # 等宽字体，模拟终端/示波器显示
+    font_point: 14
+    corner_radius: 0 # 无圆角，保持硬朗的电子设备风格
+    line_spacing: 2
+    spacing: 6
+    # 可选：添加一些示波器特有的视觉效果
+    alpha: 0.95 # 轻微透明度，模拟CRT屏幕效果
