@@ -23,4 +23,4 @@ patch:
 
   # 菜单设置
   menu:
-    page_size: 5 # 每页候选词数量
+    page_size: 10 # 每页候选词数量
