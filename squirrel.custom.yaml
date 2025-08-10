@@ -31,6 +31,8 @@ patch:
   style/color_scheme: oscilloscope_green
 
   # 通用显示参数 - 只保留不会与主题冲突的设置
+  style/candidate_list_layout: linear # stacked | linear
+  style/text_orientation: horizontal # horizontal | vertical
   style/horizontal: true # 横向排布候选词
   style/inline_preedit: true # 内嵌预编辑
   style/font_point: 14
@@ -48,6 +50,51 @@ patch:
   show_notifications_when_mode_changes: true # 模式切换时显示通知
   show_notifications_via_notification_center: false # 不使用通知中心
   show_notifications_time: 1.2 # 通知显示时间（秒）
+
+  app_options:
+    com.apple.Spotlight:
+      ascii_mode: false
+    com.alfredapp.Alfred:
+      ascii_mode: false
+    com.runningwithcrayons.Alfred-2:
+      ascii_mode: false
+    com.blacktree.Quicksilver:
+      ascii_mode: false
+    com.apple.Terminal:
+      ascii_mode: false
+      no_inline: true
+    com.googlecode.iterm2:
+      ascii_mode: false
+      no_inline: true
+    org.vim.MacVim:
+      ascii_mode: false # 初始爲西文模式
+      no_inline: true # 不使用行內編輯
+      vim_mode: true # 退出VIM插入模式自動切換輸入法狀態
+    com.apple.dt.Xcode:
+      ascii_mode: false
+    com.barebones.textwrangler:
+      ascii_mode: false
+    com.macromates.TextMate.preview:
+      ascii_mode: false
+    com.github.atom:
+      ascii_mode: false
+    com.microsoft.VSCode:
+      ascii_mode: false
+    com.sublimetext.2:
+      ascii_mode: false
+    org.gnu.Aquamacs:
+      ascii_mode: false
+    org.gnu.Emacs:
+      ascii_mode: false
+      no_inline: true
+    co.zeit.hyper:
+      ascii_mode: false
+    com.google.Chrome:
+      # 規避 https://github.com/rime/squirrel/issues/435
+      inline: true
+    ru.keepcoder.Telegram:
+      # 規避 https://github.com/rime/squirrel/issues/475
+      inline: true
 
   # macOS 原生风格配色方案
   preset_color_schemes/macos_native:
